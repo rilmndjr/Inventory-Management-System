@@ -31,4 +31,32 @@ def update_item_quantity(inventory):
     else:
         print(f"{item_name} does not exist in inventory.")
 
-def 
+def remove_item(inventory):
+    item_name = input("Enter the name of the item to remove: ")
+    if item_name in  inventory:
+        del inventory[item_name]
+        print(f"{item_name} remove from the inventory.")
+    else:
+        print(f"{item_name} does not exist in inventory.")
+
+def main():
+    inventory = {}
+    while True:
+        display_menu()
+        choice = input("Choose an Option: ")
+        if choice == '1':
+            add_item(inventory)
+        elif choice == '2':
+            view_inventory(inventory)
+        elif choice == '3':
+            update_item_quantity(inventory)
+        elif choice == '4':
+            remove_item(inventory)
+        elif choice == '5':
+            print("Exiting Inventory Management System.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
