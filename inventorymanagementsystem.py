@@ -15,3 +15,20 @@ def add_item(inventory):
         inventory[item_name] = item_quantity
         print(f"{item_name} added to inventory.")
 
+def view_inventory(inventory):
+    if not inventory:
+        print("Inventory is empty.")
+    else:
+        for item_name, item_quantity in inventory.items():
+            print(f"Item: {item_name}, Quantity: {item_quantity}")
+
+def update_item_quantity(inventory):
+    item_name = input("Enter the name of the item to update: ")
+    if item_name in inventory:
+        item_quantity = int(input("Enter the new quantity: "))
+        inventory[item_name] = item_quantity
+        print(f"Quantity of {item_name} updated to {item_quantity}.")
+    else:
+        print(f"{item_name} does not exist in inventory.")
+
+def 
